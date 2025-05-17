@@ -63,4 +63,4 @@ func menu() {
 
 func keluar() {
 	fmt.Println("Terima kasih telah menggunakan aplikasi ini. Sampai jumpa!")
-} 
+}
