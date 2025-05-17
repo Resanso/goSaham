@@ -2,7 +2,7 @@ package search
 
 import (
 	"fmt"
-	"tubesAlpro/fitur/data"
+	data "github.com/Resanso/goSaham/fitur/data"
 )
 
 // Menampilkan daftar semua saham

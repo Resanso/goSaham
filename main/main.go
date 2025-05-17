@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"tubesAlpro/fitur/portfolio"
-	"tubesAlpro/fitur/search"
-	"tubesAlpro/fitur/sort"
-	"tubesAlpro/fitur/stats"
+
+	portfolio "github.com/Resanso/goSaham/fitur/portfolio"
+	search "github.com/Resanso/goSaham/fitur/search"
+	sort "github.com/Resanso/goSaham/fitur/sort"
+	stats "github.com/Resanso/goSaham/fitur/stats"
 )
 
 func main() {

@@ -2,7 +2,7 @@ package stats
 
 import (
 	"fmt"
-	"tubesAlpro/fitur/data"
+	data "github.com/Resanso/goSaham/fitur/data"
 )
 
 // CalculatePortfolioValue menghitung total nilai portofolio

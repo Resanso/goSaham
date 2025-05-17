@@ -2,7 +2,7 @@ package sort
 
 import (
 	"fmt"
-	"tubesAlpro/fitur/data"
+	data "github.com/Resanso/goSaham/fitur/data"
 )
 
 // Fungsi untuk menampilkan daftar saham terurut
