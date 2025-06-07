@@ -24,28 +24,4 @@ func Portofolio() {
 	fmt.Scanln() // Kadang perlu dua kali karena buffer input
 }
 
-// Fungsi untuk menambah saham ke portofolio
-func Transaksi() {
-	var kodeSaham string
-	var jumlah int
-	var hargaBeli float64
 
-	fmt.Print("Masukkan kode saham yang ingin dibeli: ")
-	fmt.Scan(&kodeSaham)
-	fmt.Print("Masukkan jumlah saham yang ingin dibeli: ")
-	fmt.Scan(&jumlah)
-	fmt.Print("Masukkan harga beli per saham: ")
-	fmt.Scan(&hargaBeli)
-	
-	if data.JumlahPortofolio < 100 {
-		data.PortofolioUser[data.JumlahPortofolio] = data.PortofolioItem{KodeSaham: kodeSaham, Jumlah: jumlah, HargaBeli: hargaBeli}
-		data.JumlahPortofolio++
-		fmt.Println("Transaksi berhasil. Saham telah ditambahkan ke portofolio Anda.")
-	} else {
-		fmt.Println("Portofolio penuh, tidak dapat menambahkan saham baru.")
-	}
-		
-	fmt.Print("\nTekan Enter untuk kembali ke menu utama...")
-	fmt.Scanln() 
-	fmt.Scanln() 
-}
