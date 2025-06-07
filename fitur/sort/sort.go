@@ -2,6 +2,7 @@ package sort
 
 import (
 	"fmt"
+
 	data "github.com/Resanso/goSaham/fitur/data"
 )
 
@@ -13,20 +14,20 @@ func DaftarSahamTerurut(metode string) {
 	// Mengurutkan dengan metode yang dipilih
 	if metode == "selection" {
 		sortedSaham = SelectionSortByPrice(data.ListSaham)
-		metodeName = "Selection Sort"
+		metodeName = "Selection Sort (Berdasarkan Harga)"
 	} else if metode == "insertion" {
-		sortedSaham = InsertionSortByPrice(data.ListSaham)
-		metodeName = "Insertion Sort"
+		sortedSaham = InsertionSortByVolume(data.ListSaham)
+		metodeName = "Insertion Sort (Berdasarkan Volume)"
 	}
 	
-	fmt.Printf("Daftar Saham Terurut Berdasarkan Harga Tertinggi (%s):\n", metodeName)
-	fmt.Println("-----------------------------------------------------------")
-	fmt.Printf("%-6s %-25s %-10s %-15s\n", "Kode", "Nama", "Harga", "Kategori")
-	fmt.Println("-----------------------------------------------------------")
+	fmt.Printf("Daftar Saham Terurut (%s):\n", metodeName)
+	fmt.Println("-------------------------------------------------------------------------------")
+	fmt.Printf("%-6s %-25s %-10s %-15s %-12s\n", "Kode", "Nama", "Harga", "Kategori", "Volume")
+	fmt.Println("-------------------------------------------------------------------------------")
 	
 	for i := 0; i < 5; i++ {
 		s := sortedSaham[i]
-		fmt.Printf("%-6s %-25s %-10.2f %-15s\n", s.Kode, s.Nama, s.Harga, s.Kategori)
+		fmt.Printf("%-6s %-25s %-10.2f %-15s %-12d\n", s.Kode, s.Nama, s.Harga, s.Kategori, s.Volume)
 	}
 	
 	fmt.Print("\nTekan Enter untuk kembali ke menu utama...")
@@ -64,8 +65,8 @@ func SelectionSortByPrice(saham [5]data.Saham) [5]data.Saham {
 	return result
 }
 	
-// Fungsi insertion sort untuk mengurutkan saham berdasarkan harga tertinggi
-func InsertionSortByPrice(saham [5]data.Saham) [5]data.Saham {
+// Fungsi insertion sort untuk mengurutkan saham berdasarkan volume tertinggi
+func InsertionSortByVolume(saham [5]data.Saham) [5]data.Saham {
 	// Membuat array hasil dengan ukuran tetap 5
 	var result [5]data.Saham
 		
@@ -74,13 +75,13 @@ func InsertionSortByPrice(saham [5]data.Saham) [5]data.Saham {
 		result[i] = saham[i]
 	}
 		
-	// Mengurutkan dengan insertion sort
+	// Mengurutkan dengan insertion sort berdasarkan volume tertinggi
 	for i := 1; i < 5; i++ {
 		key := result[i]
 		j := i - 1
 			
-		// Geser elemen yang lebih kecil dari key ke kanan
-		for j >= 0 && result[j].Harga < key.Harga {
+		// Geser elemen yang memiliki volume lebih kecil dari key ke kanan
+		for j >= 0 && result[j].Volume < key.Volume {
 			result[j+1] = result[j]
 			j--
 		}
